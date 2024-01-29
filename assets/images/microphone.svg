@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_17593" data-name="Rectangle 17593" width="24" height="24" transform="translate(314 22)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="voice_message" transform="translate(-314 -22)">
+    <g id="Mask_Group_6" data-name="Mask Group 6" clip-path="url(#clip-path)">
+      <g id="mic_709950" transform="translate(313.998 22)">
+        <g id="Group_7897" data-name="Group 7897">
+          <g id="Group_7896" data-name="Group 7896">
+            <path id="Path_14547" data-name="Path 14547" d="M12,0A4.208,4.208,0,0,0,7.8,4.206v8.266a4.206,4.206,0,0,0,8.411.028V4.206A4.208,4.208,0,0,0,12,0Zm2.452,12.5a2.452,2.452,0,0,1-4.9-.028V4.206a2.452,2.452,0,0,1,4.9,0Z"/>
+          </g>
+        </g>
+        <g id="Group_7899" data-name="Group 7899">
+          <g id="Group_7898" data-name="Group 7898">
+            <path id="Path_14548" data-name="Path 14548" d="M11.126,19.185h1.753v3.938A.878.878,0,0,1,12,24h0a.878.878,0,0,1-.877-.877Z"/>
+          </g>
+        </g>
+        <g id="Group_7901" data-name="Group 7901">
+          <g id="Group_7900" data-name="Group 7900">
+            <path id="Path_14549" data-name="Path 14549" d="M18.632,11.008a.878.878,0,0,0-.877.877v.7a5.753,5.753,0,1,1-11.505,0v-.7a.877.877,0,1,0-1.753,0v.7a7.506,7.506,0,1,0,15.012,0v-.7A.878.878,0,0,0,18.632,11.008Z"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
