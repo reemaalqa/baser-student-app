@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xff22577A);
+//const Color primaryColor = Color(0xff22577A);
+const Color primaryColor = Color(0xff17a34a);
 const Color secondaryColor = Color(0xff212121);
 const Color pageBackgroundColor = Color(0xffFFFFFF);
 const Color backgroundColor = Color(0xfff6f6f6);
@@ -22,4 +23,4 @@ final Color shimmerContentColor = Colors.white.withOpacity(0.85);
 const Color greenColor = Colors.green;
 const Color redColor = Colors.red;
 const Color orangeColor = Colors.orange;
-const Color blueColor = Colors.blue;
+// const Color blueColor = Colors.blue;

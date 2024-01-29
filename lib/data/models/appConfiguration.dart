@@ -26,7 +26,7 @@ class AppConfiguration {
   late final String isOnlineFeesPaymentEnabled;
 
   AppConfiguration.fromJson(Map<String, dynamic> json) {
-    //logger.i(json);
+    // logger.i(json);
     appLink = json['app_link'] ?? "";
     iosAppLink = json['ios_app_link'] ?? "";
     appVersion = json['app_version'] ?? "";

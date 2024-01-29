@@ -19,7 +19,7 @@ class SessionYear {
   SessionYear.fromJson(Map<String, dynamic> json) {
     id = json['id'] ?? 0;
     name = json['name'] ?? "";
-    defaultValue = json['default'] ?? -1;
+    defaultValue = (json['default'] ?? -1).toString();
     startDate = json['start_date'] == null
         ? DateTime.now()
         : DateTime.parse(json['start_date'].toString());

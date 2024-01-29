@@ -20,8 +20,8 @@ class FeesSettings {
   FeesSettings.fromJson(Map<String, dynamic> json) {
     currencyCode = json['currency_code'] ?? "";
     currencySymbol = json['currency_symbol'] ?? "";
-    razorpayStatus = json['razorpay_status'] ?? "0";
-    stripeStatus = json['stripe_status'] ?? "0";
+    razorpayStatus = (json['razorpay_status'] ?? "0").toString();
+    stripeStatus = (json['stripe_status'] ?? "0").toString();
     razorpayApiKey = json['razorpay_api_key'] ?? "";
     stripePublishableKey = json['stripe_publishable_key'] ?? "";
   }
