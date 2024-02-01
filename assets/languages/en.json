@@ -1,4 +1,7 @@
 {
+  "studyingtime": "Studying Time With Baser",
+  "breaktime": "Take Break,Then Continue....",
+  "userManual": "User Manual",
   "home": "Home",
   "assignments": "Assignments",
   "menu": "Menu",
@@ -9,6 +12,7 @@
   "settings": "Settings",
   "exams": "Exams",
   "attendance": "Attendance",
+  "studying": "Studying With Baser",
   "profile": "Profile",
   "personalDetails": "Personal Details",
   "name": "Name",

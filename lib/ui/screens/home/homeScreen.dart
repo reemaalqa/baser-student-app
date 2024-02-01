@@ -36,7 +36,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:showcaseview/showcaseview.dart';
+import '../../../cubits/timer/timer_cubit.dart';
 import '../../widgets/resultsContainer.dart';
+import '../../widgets/studyingContainer.dart';
 
 //value notifier to show notification icon active/deavtive
 ValueNotifier<int> notificationCountValueNotifier = ValueNotifier(0);
@@ -61,6 +63,9 @@ class HomeScreen extends StatefulWidget {
           ),
           BlocProvider<AssignmentsCubit>(
             create: (_) => AssignmentsCubit(AssignmentRepository()),
+          ),
+          BlocProvider<TimerCubit>(
+            create: (context) => TimerCubit(),
           ),
           BlocProvider<AttendanceCubit>(
             create: (context) => AttendanceCubit(StudentRepository()),
@@ -390,6 +395,10 @@ class HomeScreenState extends State<HomeScreen>
     if (homeBottomSheetMenu[_currentlyOpenMenuIndex].title == attendanceKey) {
       return const AttendanceContainer();
     } else if (homeBottomSheetMenu[_currentlyOpenMenuIndex].title ==
+        studyingKey) {
+      return const StudyingContainer();
+    }
+    else if (homeBottomSheetMenu[_currentlyOpenMenuIndex].title ==
         timeTableKey) {
       return const TimeTableContainer();
     } else if (homeBottomSheetMenu[_currentlyOpenMenuIndex].title ==

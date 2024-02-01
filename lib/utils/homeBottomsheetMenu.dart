@@ -12,8 +12,11 @@ class Menu {
 
 final List<Menu> homeBottomSheetMenu = [
   Menu(
-      iconUrl: UiUtils.getImagePath("attendance_icon.svg"),
-      title: attendanceKey,),
+      iconUrl: UiUtils.getImagePath("studying.svg"),
+      title: studyingKey,),
+  Menu(
+    iconUrl: UiUtils.getImagePath("attendance_icon.svg"),
+    title: attendanceKey,),
   Menu(
       iconUrl: UiUtils.getImagePath("timetable_icon.svg"), title: timeTableKey,),
   Menu(

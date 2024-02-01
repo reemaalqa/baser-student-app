@@ -130,6 +130,12 @@ class SettingsContainer extends StatelessWidget {
     return Column(
       children: [
         if (context.read<AuthCubit>().isParent())
+        Center(
+          child: SizedBox(width:MediaQuery.of(context).size.width * (0.3),
+              // height: MediaQuery.of(context).size.height * (0.5),
+              child: Image.asset(UiUtils.getImagePath("baseer_logo.png"),color:UiUtils.getColorScheme(context).primary,)),
+        ),
+        if (context.read<AuthCubit>().isParent())
           _buildSettingDetailsTile(
             icon: Icons.notifications, //this is for show only
             customIcon: const NotificationIconWidget(
@@ -270,6 +276,14 @@ class SettingsContainer extends StatelessWidget {
                 _buildSettingsContainer(context),
                 const SizedBox(
                   height: 25.0,
+                ),
+                Center(
+                  child: SizedBox(width:MediaQuery.of(context).size.width * (0.3),
+                      // height: MediaQuery.of(context).size.height * (0.5),
+                      child: Image.asset(UiUtils.getImagePath("baseer_logo.png"),)),
+                ),
+                const SizedBox(
+                  height: 10.0,
                 ),
                 const LogoutButton(),
                 const SizedBox(

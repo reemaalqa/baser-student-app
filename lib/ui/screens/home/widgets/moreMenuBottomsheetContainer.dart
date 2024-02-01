@@ -59,7 +59,7 @@ class MoreMenuBottomsheetContainer extends StatelessWidget {
               width: boxConstraints.maxWidth * (0.3),
               child: Text(
                 UiUtils.getTranslatedLabel(context, title),
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -79,6 +79,7 @@ class MoreMenuBottomsheetContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 25.0, right: 25.0, left: 25.0),
       width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height*0.85,
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: const BorderRadius.only(
@@ -88,135 +89,143 @@ class MoreMenuBottomsheetContainer extends StatelessWidget {
       ),
       child: LayoutBuilder(
         builder: (context, boxConstraints) {
-          return Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    height: boxConstraints.maxWidth * (0.22),
-                    width: boxConstraints.maxWidth * (0.22),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2.0,
-                        color: Theme.of(context).colorScheme.onBackground,
+          return SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Center(
+                  child: SizedBox(width:MediaQuery.of(context).size.width * (0.5),
+                      // height: MediaQuery.of(context).size.height * (0.5),
+                      child: Image.asset(UiUtils.getImagePath("baseer_logo.png"))),
+                ),
+                Row(
+                  children: [
+                    Container(
+                      height: boxConstraints.maxWidth * (0.22),
+                      width: boxConstraints.maxWidth * (0.22),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2.0,
+                          color: Theme.of(context).colorScheme.onBackground,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          boxConstraints.maxWidth * (0.11),
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(
-                        boxConstraints.maxWidth * (0.11),
+                      child: CustomUserProfileImageWidget(
+                        profileUrl:
+                            context.read<AuthCubit>().getStudentDetails().image,
+                        color: Colors.black,
                       ),
                     ),
-                    child: CustomUserProfileImageWidget(
-                      profileUrl:
-                          context.read<AuthCubit>().getStudentDetails().image,
-                      color: Colors.black,
+                    SizedBox(
+                      width: boxConstraints.maxWidth * (0.075),
                     ),
-                  ),
-                  SizedBox(
-                    width: boxConstraints.maxWidth * (0.075),
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context
-                              .read<AuthCubit>()
-                              .getStudentDetails()
-                              .getFullName(),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18.0,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            context
+                                .read<AuthCubit>()
+                                .getStudentDetails()
+                                .getFullName(),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 18.0,
+                            ),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            Flexible(
-                              child: Text(
-                                "${UiUtils.getTranslatedLabel(context, classKey)} : ${context.read<AuthCubit>().getStudentDetails().classSectionName}",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.w400,
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onBackground,
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  "${UiUtils.getTranslatedLabel(context, classKey)} : ${context.read<AuthCubit>().getStudentDetails().classSectionName}",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onBackground,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 10.0,
-                            ),
-                            Container(
-                              width: 1.5,
-                              height: 12.0,
-                              color: Theme.of(context).colorScheme.onBackground,
-                            ),
-                            const SizedBox(
-                              width: 10.0,
-                            ),
-                            Flexible(
-                              child: Text(
-                                "${UiUtils.getTranslatedLabel(context, rollNoKey)} : ${context.read<AuthCubit>().getStudentDetails().rollNumber}",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.w400,
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onBackground,
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              Container(
+                                width: 1.5,
+                                height: 12.0,
+                                color: Theme.of(context).colorScheme.onBackground,
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              Flexible(
+                                child: Text(
+                                  "${UiUtils.getTranslatedLabel(context, rollNoKey)} : ${context.read<AuthCubit>().getStudentDetails().rollNumber}",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onBackground,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () async {
-                      closeBottomMenu();
-
-                      Navigator.of(context).pushNamed(
-                        Routes.studentProfile,
-                        arguments:
-                            context.read<AuthCubit>().getStudentDetails(),
-                      );
-                    },
-                    icon: Transform.rotate(
-                      angle: pi,
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Theme.of(context).colorScheme.secondary,
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                  )
-                ],
-              ),
-              Divider(
-                color: Theme.of(context).colorScheme.onBackground,
-                height: 50,
-              ),
-              Wrap(
-                children: homeBottomSheetMenu
-                    .map(
-                      (e) => _buildMoreMenuContainer(
-                        context: context,
-                        boxConstraints: boxConstraints,
-                        iconUrl: e.iconUrl,
-                        title: e.title,
+                    IconButton(
+                      onPressed: () async {
+                        closeBottomMenu();
+
+                        Navigator.of(context).pushNamed(
+                          Routes.studentProfile,
+                          arguments:
+                              context.read<AuthCubit>().getStudentDetails(),
+                        );
+                      },
+                      icon: Transform.rotate(
+                        angle: pi,
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
                       ),
                     )
-                    .toList(),
-              ),
-              SizedBox(
-                height: UiUtils.getScrollViewBottomPadding(context),
-              ),
-            ],
+                  ],
+                ),
+                Divider(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  height: 50,
+                ),
+                Wrap(
+                  children:
+                  homeBottomSheetMenu
+                      .map(
+                        (e) => _buildMoreMenuContainer(
+                          context: context,
+                          boxConstraints: boxConstraints,
+                          iconUrl: e.iconUrl,
+                          title: e.title,
+                        ),
+                      )
+                      .toList(),
+                ),
+                SizedBox(
+                  height: UiUtils.getScrollViewBottomPadding(context),
+                ),
+              ],
+            ),
           );
         },
       ),

@@ -4,8 +4,11 @@ import 'package:eschool/ui/widgets/customRoundedButton.dart';
 import 'package:eschool/utils/labelKeys.dart';
 import 'package:eschool/utils/uiUtils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+
+import '../../../utils/animationConfiguration.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -105,6 +108,27 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                             Padding(
                               padding: EdgeInsets.symmetric(
                                 horizontal:
+                                MediaQuery.of(context).size.width * (0.1),
+                              ),                              child: Animate(
+                                effects: customItemZoomAppearanceEffects(
+                                  delay: const Duration(
+                                    milliseconds: 10,
+                                  ),
+                                  duration: const Duration(
+                                    seconds: 1,
+                                  ),
+                                ),
+                                child:
+                                Image.asset(UiUtils.getImagePath("baseer_logo.png")),
+
+                                // SvgPicture.asset(
+                                //   UiUtils.getImagePath("appLogo.svg"),
+                                // ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal:
                                     MediaQuery.of(context).size.width * (0.1),
                               ),
                               child: Text(
@@ -126,27 +150,27 @@ class _AuthScreenState extends State<AuthScreen> with TickerProviderStateMixin {
                             SizedBox(
                               height: boxConstraints.maxHeight * (0.0125),
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * (0.1),
-                              ),
-                              child: Text(
-                                context
-                                    .read<AppConfigurationCubit>()
-                                    .getAppConfiguration()
-                                    .schoolTagline,
-                                textAlign: TextAlign.center,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w300,
-                                  color: UiUtils.getColorScheme(context)
-                                      .onBackground,
-                                ),
-                              ),
-                            ),
+                            // Padding(
+                            //   padding: EdgeInsets.symmetric(
+                            //     horizontal:
+                            //         MediaQuery.of(context).size.width * (0.1),
+                            //   ),
+                            //   child: Text(
+                            //     context
+                            //         .read<AppConfigurationCubit>()
+                            //         .getAppConfiguration()
+                            //         .schoolTagline,
+                            //     textAlign: TextAlign.center,
+                            //     maxLines: 2,
+                            //     overflow: TextOverflow.ellipsis,
+                            //     style: TextStyle(
+                            //       fontSize: 16.0,
+                            //       fontWeight: FontWeight.w300,
+                            //       color: UiUtils.getColorScheme(context)
+                            //           .onBackground,
+                            //     ),
+                            //   ),
+                            // ),
                             SizedBox(
                               height: boxConstraints.maxHeight * (0.05),
                             ),

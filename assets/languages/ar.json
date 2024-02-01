@@ -1,4 +1,7 @@
 {
+  "studyingtime": "ادرس مع بصير.....",
+  "breaktime": "خذ قسطا من الراحة، ثم اكمل...",
+  "userManual": "دليل المستخدم",
   "home": "الرئيسية",
   "assignments": "المهام",
   "menu": "القائمة",
@@ -9,6 +12,7 @@
   "settings": "الإعدادات",
   "exams": "الامتحانات",
   "attendance": "الحضور",
+  "studying": "ادرس مع بصير",
   "profile": "الملف الشخصي",
   "personalDetails": "التفاصيل الشخصية",
   "name": "الاسم",

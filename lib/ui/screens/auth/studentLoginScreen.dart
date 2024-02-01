@@ -203,12 +203,17 @@ class _StudentLoginScreenState extends State<StudentLoginScreen>
               padding: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width * (0.075),
                 right: MediaQuery.of(context).size.width * (0.075),
-                top: MediaQuery.of(context).size.height * (0.25),
+                top: MediaQuery.of(context).size.height * (0.15),
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Center(
+                    child: SizedBox(width:MediaQuery.of(context).size.width * (0.5),
+                        // height: MediaQuery.of(context).size.height * (0.5),
+                        child: Image.asset(UiUtils.getImagePath("baseer_logo.png"))),
+                  ),
                   Text(
                     UiUtils.getTranslatedLabel(context, letsSignInKey),
                     style: TextStyle(

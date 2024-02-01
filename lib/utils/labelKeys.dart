@@ -2,6 +2,9 @@
 
 const String homeKey = "home";
 const String attendanceKey = "attendance";
+const String studyingKey="studying";
+const String studyingtimekey="studyingtime";
+const String breaktimeKey="breaktime";
 const String menuKey = "menu";
 const String assignmentsKey = "assignments";
 const String timeTableKey = "timeTable";

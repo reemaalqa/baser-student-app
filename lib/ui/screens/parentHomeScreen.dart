@@ -129,86 +129,97 @@ class _ParentHomeScreenState extends State<ParentHomeScreen>
                 ),
 
                 Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    margin: EdgeInsetsDirectional.only(
-                      end: boxConstraints.maxWidth * (0.02),
-                      start: boxConstraints.maxWidth * (0.075),
-                      bottom: boxConstraints.maxHeight * (0.21),
-                    ),
-                    child: Row(
-                      children: [
-                        BorderedProfilePictureContainer(
-                          onTap: () {
-                            Navigator.of(context)
-                                .pushNamed(Routes.parentProfile);
-                          },
-                          boxConstraints: boxConstraints,
-                          imageUrl: context
-                              .read<AuthCubit>()
-                              .getParentDetails()
-                              .image,
-                        ),
-                        SizedBox(
-                          width: boxConstraints.maxWidth * (0.04),
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: boxConstraints.maxWidth * (0.5),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    context
-                                        .read<AuthCubit>()
-                                        .getParentDetails()
-                                        .getFullName(),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w500,
-                                      color: Theme.of(context)
-                                          .scaffoldBackgroundColor,
-                                    ),
+                alignment: Alignment.bottomCenter,
+            child: SingleChildScrollView(
+            child: Column(
+            children: [
+            SizedBox(height:MediaQuery.of(context).size.height * (0.02),),
+            Center(
+            child: SizedBox(width:MediaQuery.of(context).size.width * (0.3),
+            // height: MediaQuery.of(context).size.height * (0.5),
+            child: Image.asset(UiUtils.getImagePath("baseer_logo.png"),color:UiUtils.getColorScheme(context).primary,colorBlendMode: BlendMode.hardLight,)),
+            ),
+
+            SizedBox(height: 5,),
+                Container(
+                  margin: EdgeInsetsDirectional.only(
+                    end: boxConstraints.maxWidth * (0.02),
+                    start: boxConstraints.maxWidth * (0.075),
+                    bottom: boxConstraints.maxHeight * (0.21),
+                  ),
+                  child: Row(
+                    children: [
+                      BorderedProfilePictureContainer(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(Routes.parentProfile);
+                        },
+                        boxConstraints: boxConstraints,
+                        imageUrl: context
+                            .read<AuthCubit>()
+                            .getParentDetails()
+                            .image,
+                      ),
+                      SizedBox(
+                        width: boxConstraints.maxWidth * (0.04),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: boxConstraints.maxWidth * (0.5),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  context
+                                      .read<AuthCubit>()
+                                      .getParentDetails()
+                                      .getFullName(),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w500,
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor,
                                   ),
-                                  Text(
-                                    context
-                                        .read<AuthCubit>()
-                                        .getParentDetails()
-                                        .email,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontSize: 12.0,
-                                      fontWeight: FontWeight.w400,
-                                      color: Theme.of(context)
-                                          .scaffoldBackgroundColor,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          iconSize: 20,
-                          color: Theme.of(context).scaffoldBackgroundColor,
-                          onPressed: () {
-                            Navigator.of(context).pushNamed(Routes.settings);
-                            // context.read<AuthCubit>().signOut();
-                            // Navigator.of(context)
-                            //     .pushReplacementNamed(Routes.auth);
-                          },
-                          icon: const Icon(Icons.settings),
-                        )
-                      ],
-                    ),
+                                ),
+                                Text(
+                                  context
+                                      .read<AuthCubit>()
+                                      .getParentDetails()
+                                      .email,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.w400,
+                                    color: Theme.of(context)
+                                        .scaffoldBackgroundColor,
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        iconSize: 20,
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(Routes.settings);
+                          // context.read<AuthCubit>().signOut();
+                          // Navigator.of(context)
+                          //     .pushReplacementNamed(Routes.auth);
+                        },
+                        icon: const Icon(Icons.settings),
+                      )
+                    ],
                   ),
                 ),
+            ])))
               ],
             );
           },
